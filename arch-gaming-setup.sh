@@ -82,6 +82,13 @@ install_cinnamon() {
     sudo systemctl enable NetworkManager
 }
 
+# Download Figlet 
+install_figlet() {
+    echo "Installing Figlet..."
+    sudo pacman -S --noconfirm figlet
+    }
+
+install_figlet
 
 install_amd() {
     echo "Installing AMD GPU drivers and tools"
@@ -132,7 +139,7 @@ pamac_installation() {
 
 # Function to prompt for Desktop Environment selection
 prompt_de_selection() {
-    echo -e "${YELLOW}Which Desktop Environment do you want to install?${NC}"
+    figlet -t -k -f slant "Which Desktop Environment do you want to install?"
     echo -e "1) KDE Plasma ${GREEN}(recommended)${NC}"
     echo -e "2) GNOME ${YELLOW}(experimental)${NC}"
     echo -e "3) XFCE ${YELLOW}(experimental)${NC}"
