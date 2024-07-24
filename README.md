@@ -20,7 +20,7 @@ This script allows users to easily transform a fresh Arch Linux installation int
 1. Clone this repository:
 
    ```
-   git clone https://github.com/Zerschranzer/arch-gaming-setup.git
+   git clone https://github.com/Pepsidotmp4/arch-gaming-setup.git
    ```
 
 2. Change into the directory:
