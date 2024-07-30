@@ -194,6 +194,7 @@ sudo pacman -Syyu --noconfirm
 install_yay
 
 # Ask about AMD installation
+figlet -t -k -f slant "Drivers"
 echo -e "${YELLOW}Do you want to install AMD GPU drivers? (y/n)${NC}"
 read -r amd_response
 if [[ "$amd_response" =~ ^[Yy]$ ]]; then
@@ -215,6 +216,7 @@ fi
 prompt_de_selection
 
 # Ask about Main installation
+figlet -t -k -f slant "Main Installation"
 echo -e "${YELLOW}Do you want to start the main installation for gaming-related software? (y/n)${NC}"
 read -r main_response
 if [[ "$main_response" =~ ^[Yy]$ ]]; then
@@ -224,6 +226,7 @@ else
 fi
 
 # Ask about Pamac installation
+figlet -t -k -f slant "Pamac"
 echo -e "${YELLOW}Do you want to install Pamac? (y/n)${NC}"
 read -r pamac_response
 if [[ "$pamac_response" =~ ^[Yy]$ ]]; then
@@ -235,6 +238,7 @@ fi
 # Ask about Kernel installation
 while true; do
     # Kernel selection
+    figlet -t -k -f slant "Kernel"
     echo -e "${YELLOW}Which kernel would you like to install?${NC}"
     echo -e "${YELLOW}Liquorix kernel most times offers slightly better performance, but it needs to be compiled on the computer, which takes way more time.${NC}"
     echo -e "${YELLOW}Zen kernel most times offers better performance for gaming compared to the standard kernel, but its not quite as powerful as the Liquorix kernel${NC}"
@@ -270,6 +274,7 @@ echo -e "${YELLOW}Process completed.${NC}"
         sudo pacman -Syy
         sudo pacman -Syu
 # Ask about restart
+figlet -t -k -f slant "BAi Bai :3"
 echo -e "${GREEN}Script completed succesfully. Do you want to restart your system to apply all changes now?(y/n)${NC}"
 read -r restart_response
 if [[ "$restart_response" =~ ^[Yy]$ ]]; then
