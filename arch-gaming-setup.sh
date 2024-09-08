@@ -81,6 +81,27 @@ install_cinnamon() {
 
     sudo systemctl enable NetworkManager
 }
+# Install my DWM patch from git-hub
+install_DWM() {
+    git clone https://github.com/Pepsidotmp4/pepsi-DWM.git
+    cd pepsi-DWM
+    sudo make clean install
+    cd
+}
+# Install St patch from git-hub
+install_st() {
+    git clone https://github.com/Pepsidotmp4/st.git
+    cd st
+    sudo make install
+    cd
+}
+# install default dmenu
+install_dmenu() {
+    git clone https://git.suckless.org/dmenu
+    cd dmenu
+    sudo make install
+    cd
+}
 
 # Download Figlet 
 install_figlet() {
@@ -144,7 +165,7 @@ prompt_de_selection() {
     echo -e "2) GNOME ${YELLOW}(experimental)${NC}"
     echo -e "3) XFCE ${YELLOW}(experimental)${NC}"
     echo -e "4) Cinnamon ${YELLOW}(experimental)${NC}"
-    echo -e "5) None"
+    echo -e "5) DWM (pepsi patch)"
     read -r de_choice
 
     case $de_choice in
@@ -164,7 +185,10 @@ prompt_de_selection() {
             install_cinnamon
             ;;
         5)
-            echo -e "${RED}No Desktop Environment will be installed.${NC}"
+            echo -e "You have selected DWM."
+            install_dwm
+            install_st
+            install_dmenu
             ;;
         *)
             echo -e "${RED}Invalid choice. Please select a valid option."
